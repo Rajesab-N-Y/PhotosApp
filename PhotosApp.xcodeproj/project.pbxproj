@@ -19,6 +19,7 @@
 		26725A982A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */; };
 		26725AAC2A2264EC0087E918 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AAB2A2264EC0087E918 /* TableViewController.swift */; };
 		26725AB22A227EB10087E918 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AB12A227EB10087E918 /* ImageDetails.swift */; };
+		26725ABA2A2297790087E918 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AB92A2297790087E918 /* TableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		26725AAB2A2264EC0087E918 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/PhotosApp/PhotosApp/View Controller/TableViewController.swift"; sourceTree = "<group>"; };
 		26725AB12A227EB10087E918 /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
+		26725AB92A2297790087E918 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		26725AAD2A227DF70087E918 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				26725AB92A2297790087E918 /* TableViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26725A7C2A2255D30087E918 /* PhotosApp.xcdatamodeld in Sources */,
+				26725ABA2A2297790087E918 /* TableViewModel.swift in Sources */,
 				26725AB22A227EB10087E918 /* ImageDetails.swift in Sources */,
 				26725A762A2255D30087E918 /* ViewController.swift in Sources */,
 				26725A722A2255D30087E918 /* AppDelegate.swift in Sources */,
