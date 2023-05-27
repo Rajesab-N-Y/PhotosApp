@@ -179,6 +179,8 @@
 			dependencies = (
 			);
 			name = PhotosApp;
+			packageProductDependencies = (
+			);
 			productName = PhotosApp;
 			productReference = 26725A6E2A2255D30087E918 /* PhotosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +253,8 @@
 				Base,
 			);
 			mainGroup = 26725A652A2255D30087E918;
+			packageReferences = (
+			);
 			productRefGroup = 26725A6F2A2255D30087E918 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
