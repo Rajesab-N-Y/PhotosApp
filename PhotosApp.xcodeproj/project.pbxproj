@@ -17,6 +17,7 @@
 		26725A8C2A2255D50087E918 /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A8B2A2255D50087E918 /* PhotosAppTests.swift */; };
 		26725A962A2255D50087E918 /* PhotosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A952A2255D50087E918 /* PhotosAppUITests.swift */; };
 		26725A982A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */; };
+		26725AAC2A2264EC0087E918 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AAB2A2264EC0087E918 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		26725A912A2255D50087E918 /* PhotosAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26725A952A2255D50087E918 /* PhotosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITests.swift; sourceTree = "<group>"; };
 		26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		26725AAB2A2264EC0087E918 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/PhotosApp/PhotosApp/View Controller/TableViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,9 @@
 		26725A702A2255D30087E918 /* PhotosApp */ = {
 			isa = PBXGroup;
 			children = (
+				26725AAA2A22648B0087E918 /* View Controller */,
 				26725A712A2255D30087E918 /* AppDelegate.swift */,
 				26725A732A2255D30087E918 /* SceneDelegate.swift */,
-				26725A752A2255D30087E918 /* ViewController.swift */,
 				26725A772A2255D30087E918 /* Main.storyboard */,
 				26725A7D2A2255D40087E918 /* Assets.xcassets */,
 				26725A7F2A2255D40087E918 /* LaunchScreen.storyboard */,
@@ -128,6 +130,15 @@
 				26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */,
 			);
 			path = PhotosAppUITests;
+			sourceTree = "<group>";
+		};
+		26725AAA2A22648B0087E918 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26725A752A2255D30087E918 /* ViewController.swift */,
+				26725AAB2A2264EC0087E918 /* TableViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				26725A7C2A2255D30087E918 /* PhotosApp.xcdatamodeld in Sources */,
 				26725A762A2255D30087E918 /* ViewController.swift in Sources */,
 				26725A722A2255D30087E918 /* AppDelegate.swift in Sources */,
+				26725AAC2A2264EC0087E918 /* TableViewController.swift in Sources */,
 				26725A742A2255D30087E918 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
