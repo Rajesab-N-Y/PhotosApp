@@ -59,6 +59,7 @@ class TableViewModel {
         return items[index]
     }
 }
-
-
+protocol CheckBoxActionObserver{
+    func chechBoxAction(isChecked: Bool)
+}
 
