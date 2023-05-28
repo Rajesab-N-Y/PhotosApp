@@ -10,6 +10,7 @@
 		26699DDC2A23059200E5E7B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26699DDB2A23059200E5E7B4 /* TableViewCell.swift */; };
 		26699DDE2A23118300E5E7B4 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26699DDD2A23118300E5E7B4 /* TableViewCell.xib */; };
 		26699DE12A2321EB00E5E7B4 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26699DE02A2321EB00E5E7B4 /* LazyImageView.swift */; };
+		26699DE32A237C2900E5E7B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26699DE22A237C2800E5E7B4 /* TableViewController.swift */; };
 		26725A722A2255D30087E918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A712A2255D30087E918 /* AppDelegate.swift */; };
 		26725A742A2255D30087E918 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A732A2255D30087E918 /* SceneDelegate.swift */; };
 		26725A762A2255D30087E918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A752A2255D30087E918 /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		26725A8C2A2255D50087E918 /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A8B2A2255D50087E918 /* PhotosAppTests.swift */; };
 		26725A962A2255D50087E918 /* PhotosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A952A2255D50087E918 /* PhotosAppUITests.swift */; };
 		26725A982A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */; };
-		26725AAC2A2264EC0087E918 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AAB2A2264EC0087E918 /* TableViewController.swift */; };
 		26725AB22A227EB10087E918 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AB12A227EB10087E918 /* ImageDetails.swift */; };
 		26725ABA2A2297790087E918 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725AB92A2297790087E918 /* TableViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +46,7 @@
 		26699DDB2A23059200E5E7B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		26699DDD2A23118300E5E7B4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		26699DE02A2321EB00E5E7B4 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		26699DE22A237C2800E5E7B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		26725A6E2A2255D30087E918 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26725A712A2255D30087E918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26725A732A2255D30087E918 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		26725A912A2255D50087E918 /* PhotosAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26725A952A2255D50087E918 /* PhotosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITests.swift; sourceTree = "<group>"; };
 		26725A972A2255D50087E918 /* PhotosAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		26725AAB2A2264EC0087E918 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/PhotosApp/PhotosApp/View Controller/TableViewController.swift"; sourceTree = "<group>"; };
 		26725AB12A227EB10087E918 /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		26725AB92A2297790087E918 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				26725A752A2255D30087E918 /* ViewController.swift */,
-				26725AAB2A2264EC0087E918 /* TableViewController.swift */,
+				26699DE22A237C2800E5E7B4 /* TableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 				26725A762A2255D30087E918 /* ViewController.swift in Sources */,
 				26725A722A2255D30087E918 /* AppDelegate.swift in Sources */,
 				26699DE12A2321EB00E5E7B4 /* LazyImageView.swift in Sources */,
-				26725AAC2A2264EC0087E918 /* TableViewController.swift in Sources */,
+				26699DE32A237C2900E5E7B4 /* TableViewController.swift in Sources */,
 				26725A742A2255D30087E918 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
