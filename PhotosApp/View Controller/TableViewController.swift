@@ -90,8 +90,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TableViewController: CheckBoxActionObserver {
     func chechBoxAction(isChecked: Bool, imageDetails: ImageDetails) {
-        if let id = imageDetails.id {
-            viewModel.setCheckBoxData(id: id, isChecked: isChecked)
+        if let url = imageDetails.download_url {
+            viewModel.setCheckBoxData(id: url, isChecked: isChecked)
         }
         if isChecked {
             showDescriptionDialog(for: imageDetails)
