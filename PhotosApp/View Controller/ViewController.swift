@@ -40,8 +40,9 @@ class ViewController: UIViewController {
     }
     
     func navigateToTableView() {
-        let tableViewController = TableViewController()
-        navigationController?.pushViewController(tableViewController, animated: true)
+        if let tableViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TableViewController") as? TableViewController {
+            navigationController?.pushViewController(tableViewController, animated: true)
+        }
     }
     
     func animateImageView(_ imageView: UIImageView) {

@@ -43,8 +43,10 @@ class TableViewModel {
                 let itemList = try decoder.decode([ImageDetails].self, from: data)
                 self?.items.append(contentsOf: itemList)
                 self?.currentPage += 1
+                self?.isLoading = false
                 completion(true)
             } catch {
+                self?.isLoading = false
                 completion(false)
             }
         }.resume()
