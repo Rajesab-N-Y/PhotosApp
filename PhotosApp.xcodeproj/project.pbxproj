@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26699DDC2A23059200E5E7B4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26699DDB2A23059200E5E7B4 /* TableViewCell.swift */; };
 		26725A722A2255D30087E918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A712A2255D30087E918 /* AppDelegate.swift */; };
 		26725A742A2255D30087E918 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A732A2255D30087E918 /* SceneDelegate.swift */; };
 		26725A762A2255D30087E918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26725A752A2255D30087E918 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26699DDB2A23059200E5E7B4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		26725A6E2A2255D30087E918 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26725A712A2255D30087E918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26725A732A2255D30087E918 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26699DDA2A23055D00E5E7B4 /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				26699DDB2A23059200E5E7B4 /* TableViewCell.swift */,
+			);
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
 		26725A652A2255D30087E918 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				26725AAA2A22648B0087E918 /* View Controller */,
+				26699DDA2A23055D00E5E7B4 /* Table View Cell */,
 				26725AAD2A227DF70087E918 /* View Model */,
 				26725AB02A227E7B0087E918 /* Model */,
 				26725A712A2255D30087E918 /* AppDelegate.swift */,
@@ -299,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26725A7C2A2255D30087E918 /* PhotosApp.xcdatamodeld in Sources */,
+				26699DDC2A23059200E5E7B4 /* TableViewCell.swift in Sources */,
 				26725ABA2A2297790087E918 /* TableViewModel.swift in Sources */,
 				26725AB22A227EB10087E918 /* ImageDetails.swift in Sources */,
 				26725A762A2255D30087E918 /* ViewController.swift in Sources */,

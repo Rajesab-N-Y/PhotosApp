@@ -7,17 +7,25 @@
 
 import UIKit
 
-class MyViewModel {
+class TableViewModel {
     private var items: [ImageDetails] = []
     private var currentPage: Int = 1
     private let pageSize: Int = 20 // pagination limit
+    private var isLoading = false
     
     var itemCount: Int {
         return items.count
     }
     
+    var data: [ImageDetails] {
+        return items
+    }
+    
     // Method to get data from server
     func fetchData(completion: @escaping (Bool) -> Void) {
+        guard !isLoading else { return }
+        isLoading = true
+        
         let urlString = "https://picsum.photos/v2/list?page=\(currentPage)&limit=\(pageSize)"
         guard let url = URL(string: urlString) else {
             completion(false)
