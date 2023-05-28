@@ -74,6 +74,6 @@ class TableViewModel {
     }
 }
 protocol CheckBoxActionObserver{
-    func chechBoxAction(isChecked: Bool, id: String)
+    func chechBoxAction(isChecked: Bool, imageDetails: ImageDetails)
 }
 

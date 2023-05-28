@@ -10,8 +10,8 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet private weak var imagesView: LazyImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet private weak var checkboxButton: UIButton!
-
     @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
     
     private var imageDetails: ImageDetails?
@@ -22,7 +22,10 @@ class TableViewCell: UITableViewCell {
         self.checkBoxData = checkBoxData
         self.checkBoxActionObserver = checkBoxActionObserver
         self.imageDetails = imageDetails
-        titleLabel.text = imageDetails.author
+        titleLabel.text = "Author: " + (imageDetails.author ?? "")
+        let subTitleStr = "Id: " + (imageDetails.id ?? "") + ", Size: "
+        let imgSizeStr = String(imageDetails.height ?? 0) + "*" + String(imageDetails.width ?? 0)
+        subTitleLabel.text = subTitleStr + imgSizeStr
         imageViewHeight.constant = calculateHeight(for: imageDetails, width: width)
         if let imageUrl = URL(string: (imageDetails.download_url ?? "")){
             imagesView.loadImage(fromURL: imageUrl, placeHolderImage: "mushroom_img")
@@ -54,8 +57,8 @@ class TableViewCell: UITableViewCell {
     @IBAction func checkBoxButtonTapped(_ sender: Any) {
         checkBoxData = !checkBoxData
         setupCheckBox()
-        if let id = imageDetails?.download_url {
-            checkBoxActionObserver?.chechBoxAction(isChecked: checkBoxData, id: id)
+        if let imageDetails = imageDetails {
+            checkBoxActionObserver?.chechBoxAction(isChecked: checkBoxData, imageDetails: imageDetails)
         }
     }
 }
