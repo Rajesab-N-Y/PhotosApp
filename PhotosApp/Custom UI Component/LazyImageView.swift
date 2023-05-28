@@ -9,29 +9,28 @@ import UIKit
 
 class LazyImageView: UIImageView {
     
-    private let imageCache = NSCache<AnyObject, UIImage>()
+    private static let imageCache = NSCache<NSURL, UIImage>()
 
-    func loadImage(fromURL imageURL: URL, placeHolderImage: String)
-    {
-        self.image = UIImage(named: placeHolderImage)
+    private var imageURL: URL?
+    private var placeHolderImage: String?
 
-        if let cachedImage = self.imageCache.object(forKey: imageURL as AnyObject)
-        {
-            debugPrint("image loaded from cache for =\(imageURL)")
+    func loadImage(fromURL imageURL: URL, placeHolderImage: String) {
+        self.imageURL = imageURL
+        self.placeHolderImage = placeHolderImage
+
+        if let cachedImage = LazyImageView.imageCache.object(forKey: imageURL as NSURL) {
+            debugPrint("Image loaded from cache for \(imageURL)")
             self.image = cachedImage
             return
         }
 
-        DispatchQueue.global().async {
-            [weak self] in
+        self.image = UIImage(named: placeHolderImage)
 
-            if let imageData = try? Data(contentsOf: imageURL)
-            {
-                debugPrint("image downloaded from server...")
-                if let image = UIImage(data: imageData)
-                {
+        DispatchQueue.global().async { [weak self] in
+            if let imageData = try? Data(contentsOf: imageURL), let image = UIImage(data: imageData) {
+                LazyImageView.imageCache.setObject(image, forKey: imageURL as NSURL)
+                if imageURL == self?.imageURL {
                     DispatchQueue.main.async {
-                        self!.imageCache.setObject(image, forKey: imageURL as AnyObject)
                         self?.image = image
                     }
                 }
@@ -39,3 +38,4 @@ class LazyImageView: UIImageView {
         }
     }
 }
+

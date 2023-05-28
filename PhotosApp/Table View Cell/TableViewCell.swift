@@ -8,30 +8,33 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet private weak var imagesView: UIImageView!
+    @IBOutlet private weak var imagesView: LazyImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    private var imageDetails: ImageDetails?
 
     func configure(with imageDetails: ImageDetails) {
         titleLabel.text = imageDetails.author
-
-        if let download_url = imageDetails.download_url ,let imageURL = URL(string: download_url) {
-            // Download and set the image asynchronously
-            DispatchQueue.global().async {
-                if let imageData = try? Data(contentsOf: imageURL) {
-                    DispatchQueue.main.async {
-                        self.imagesView.image = UIImage(data: imageData)
-                    }
-                }
-            }
+        if let imageUrl = URL(string: (imageDetails.download_url ?? "")){
+            imagesView.loadImage(fromURL: imageUrl, placeHolderImage: "mushroom_img")
         }
     }
 
-    static func calculateHeight(for imageDetails: ImageDetails, width: CGFloat) -> CGFloat {
-        let imageHeight: CGFloat = 200 // Set the desired image height
-        let titleLabelHeight: CGFloat = 30 // Set the desired title label height
-        let padding: CGFloat = 16 // Set the desired padding
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imagesView.image = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Adjust the height of the cell based on the image height
 
-        return imageHeight + titleLabelHeight + (2 * padding) // Total cell height
+    }
+    
+    static func calculateHeight(for imageDetails: ImageDetails, width: CGFloat) -> CGFloat {
+        let ratio = width / CGFloat(imageDetails.width ?? 0)
+        let height = ratio * CGFloat(imageDetails.height ?? 0)
+        return height
     }
 }
 
