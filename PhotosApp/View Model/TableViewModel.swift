@@ -12,6 +12,7 @@ class TableViewModel {
     private var currentPage: Int = 1
     private let pageSize: Int = 20 // pagination limit
     private var isLoading = false
+    private var checkBoxData = [String : Bool]()
     
     var itemCount: Int {
         return items.count
@@ -19,6 +20,14 @@ class TableViewModel {
     
     var data: [ImageDetails] {
         return items
+    }
+    
+    func getCheckBoxData(id: String) -> Bool{
+        return checkBoxData[id] ?? false
+    }
+    
+    func setCheckBoxData(id: String, isChecked: Bool){
+        checkBoxData[id] = isChecked
     }
     
     // Method to get data from server
@@ -42,6 +51,11 @@ class TableViewModel {
                 let decoder = JSONDecoder()
                 let itemList = try decoder.decode([ImageDetails].self, from: data)
                 self?.items.append(contentsOf: itemList)
+                for item in itemList {
+                    if let url = item.download_url, self?.checkBoxData[url] == nil {
+                        self?.checkBoxData[url] = false
+                    }
+                }
                 self?.currentPage += 1
                 self?.isLoading = false
                 completion(true)
@@ -60,6 +74,6 @@ class TableViewModel {
     }
 }
 protocol CheckBoxActionObserver{
-    func chechBoxAction(isChecked: Bool)
+    func chechBoxAction(isChecked: Bool, id: String)
 }
 
