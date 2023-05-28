@@ -30,6 +30,13 @@ class TableViewModel {
         checkBoxData[id] = isChecked
     }
     
+    //Method to refresh data
+    func cleanData(){
+        items = []
+        currentPage = 1
+        checkBoxData = [:]
+    }
+    
     // Method to get data from server
     func fetchData(completion: @escaping (Bool) -> Void) {
         guard !isLoading else { return }
@@ -51,11 +58,6 @@ class TableViewModel {
                 let decoder = JSONDecoder()
                 let itemList = try decoder.decode([ImageDetails].self, from: data)
                 self?.items.append(contentsOf: itemList)
-                for item in itemList {
-                    if let url = item.download_url, self?.checkBoxData[url] == nil {
-                        self?.checkBoxData[url] = false
-                    }
-                }
                 self?.currentPage += 1
                 self?.isLoading = false
                 completion(true)
