@@ -42,11 +42,9 @@ class TableViewController: UIViewController {
     }
     
     private func fetchData() {
-        showLoadingIndicator()
         viewModel.fetchData { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
-                self?.hideLoadingIndicator()
             }
         }
     }
@@ -56,7 +54,13 @@ class TableViewController: UIViewController {
             isRefreshing = true
             viewModel.cleanData()
             tableView.reloadData()
-            fetchData()
+            showLoadingIndicator()
+            viewModel.fetchData { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.hideLoadingIndicator()
+                }
+            }
         }
     }
     
